@@ -21,4 +21,4 @@ Requires Python 3.11 or newer
 
 ## Acknowledgements
 
-The GridWorld setup and parts of the code are adapated from the Reinforcement Learning Laboratoris by Alberto Sinigaglia, Unipd, 2025-2026. The Control part has been made entirely by me.
+The GridWorld setup and parts of the code are adapated from the Reinforcement Learning Laboratories by Alberto Sinigaglia, Unipd, 2025-2026. The Control part has been made entirely by me.

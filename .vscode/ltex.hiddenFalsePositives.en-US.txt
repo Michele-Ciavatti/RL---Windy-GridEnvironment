@@ -1,1 +1,2 @@
 {"rule":"SENT_START_CONJUNCTIVE_LINKING_ADVERB_COMMA","sentence":"^\\QOtherwise no wind.\\E$"}
+{"rule":"COLLECTIVE_NOUN_VERB_AGREEMENT_VBP","sentence":"^\\QRewards +1 for reaching the goal, −0.1 for hitting a wall, 0 otherwise\nEpisodes End at the goal or after a fixed amount of steps\nDiscount γ = 0.9\\E$"}

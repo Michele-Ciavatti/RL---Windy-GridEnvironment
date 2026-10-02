@@ -18,16 +18,6 @@ An agent starts in the bottom-left corner `(0, 0)` and must reach the goal in th
 | **Episodes** | End at the goal or after `<!-- TODO: MAX_STEPS -->` steps                                                                                |
 | **Discount** | γ = 0.9                                                                                                                                  |
 
-<!-- TODO: replace this table with the real wind rule from the code -->
-**Wind rule**
-
-| Row parity | Column parity | Push direction | Magnitude |
-| ---------- | ------------- | -------------- | --------- |
-| even       | even          | TODO           | TODO      |
-| even       | odd           | TODO           | TODO      |
-| odd        | even          | TODO           | TODO      |
-| odd        | odd           | TODO           | TODO      |
-
 ## What's implemented
 
 - **Environments**: `GridEnvironment` (no wind) and `StochasticWindGridEnvironment`
@@ -38,6 +28,47 @@ An agent starts in the bottom-left corner `(0, 0)` and must reach the goal in th
   * `QLearningAgent`: off-policy, bootstraps on `max_a Q(s', a)`
   * `SarsaAgent`: on-policy, bootstraps on `Q(s', a')` with `a'` sampled from the policy
   * `ExpectedSarsaAgent`: bootstraps on the expectation of `Q(s', ·)` under the policy
+
+## Class overview
+
+```mermaid
+classDiagram
+    class GridEnvironment
+    class StochasticWindGridEnvironment
+    GridEnvironment <|-- StochasticWindGridEnvironment
+
+    class Estimator {
+        <<abstract>>
+    }
+    class Value
+    class ActionValue
+    Estimator <|-- Value
+    Estimator <|-- ActionValue
+
+    class Policy {
+        <<abstract>>
+    }
+    class EpsilonSoftPolicy
+    Policy <|-- EpsilonSoftPolicy
+    Policy o-- ActionValue
+
+    class Agent {
+        <<abstract>>
+    }
+    Agent o-- GridEnvironment
+    Agent o-- EpsilonSoftPolicy
+    Agent --> Value
+    class MCAgent
+    class TD0Agent {
+        <<abstract>>
+    }
+    class QLearningAgent
+    class ExpectedSarsaAgent
+    Agent <|-- MCAgent
+    Agent <|-- TD0Agent
+    TD0Agent <|-- QLearningAgent
+    TD0Agent <|-- ExpectedSarsaAgent
+```
 
 ## Results
 

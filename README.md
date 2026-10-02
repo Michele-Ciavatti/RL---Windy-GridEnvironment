@@ -15,7 +15,7 @@ An agent starts in the bottom-left corner `(0, 0)` and must reach the goal in th
 | **Wind**     | With probability 0.9 per step, the agent is pushed 1 or 2 cells. Direction and magnitude depend on the parity of the current row and column (see below). Otherwise there is no wind. |
 | **Walls**    | The agent cannot leave the grid: it is clipped back inside and penalised.                                                                |
 | **Rewards**  | +1 for reaching the goal, −0.1 for hitting a wall, 0 otherwise                                                                           |
-| **Episodes** | End at the goal or after `<!-- TODO: MAX_STEPS -->` steps                                                                                |
+| **Episodes** | End at the goal or after a fixed amount of steps                                                                                |
 | **Discount** | γ = 0.9                                                                                                                                  |
 
 ## What's implemented

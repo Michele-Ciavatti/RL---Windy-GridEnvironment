@@ -26,7 +26,6 @@ An agent starts in the bottom-left corner `(0, 0)` and must reach the goal in th
 - **Monte Carlo** (`MCAgent`): first-visit or every-visit prediction and control (Sutton & Barto §5.1, §5.4)
 - **TD(0)** prediction and control (Sutton & Barto §6.1, §6.5), with three bootstrap targets:
   * `QLearningAgent`: off-policy, bootstraps on `max_a Q(s', a)`
-  * `SarsaAgent`: on-policy, bootstraps on `Q(s', a')` with `a'` sampled from the policy
   * `ExpectedSarsaAgent`: bootstraps on the expectation of `Q(s', ·)` under the policy
 
 ## Class overview
